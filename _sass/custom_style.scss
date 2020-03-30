@@ -31,11 +31,11 @@ $almost-white: #eee;
 	display: block;
 	&:hover {
 		color: $black;
-    }
-    
-    @media (min-width: 550px) {
-        margin: $spacing-unit 0;
-    }
+	}
+
+	@media (min-width: 550px) {
+		margin: $spacing-unit 0;
+	}
 }
 
 body {
@@ -102,15 +102,14 @@ main {
 	ul {
 		list-style-type: none;
 		margin: 0;
-        text-align: right;
+		text-align: right;
 		max-width: 100%;
 
 		li {
-            display: inline-block;
+			display: inline-block;
 			line-height: 1.7rem;
-            margin: 0;
-            padding-left: $spacing-unit;
-
+			margin: 0;
+			padding-left: $spacing-unit;
 
 			@media (min-width: 550px) {
 				line-height: 60px;
@@ -123,14 +122,14 @@ main {
 				font-size: 1.3rem;
 			}
 		}
-
 	}
 }
 
 /**
  * Page content
  */
-.page-content {
+.page-content,
+.site-footer {
 	padding: 20px;
 	max-width: $content-width;
 
@@ -191,4 +190,12 @@ main {
 
 .post-content {
 	margin-bottom: $spacing-unit;
+}
+
+.site-footer {
+	margin-bottom: $spacing-unit;
+	font-size: 1.2rem;
+	div > div:last-child {
+		text-align: right;
+	}
 }
