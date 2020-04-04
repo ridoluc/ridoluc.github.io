@@ -41,7 +41,8 @@ $almost-white: #eee;
 body {
 	font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 1.4em;
-	line-height: 1.7;
+    line-height: 1.7;
+    font-weight: 300;
 }
 
 h1,
@@ -194,10 +195,33 @@ main {
 	margin-bottom: $spacing-unit;
 }
 
+.footnotes p{
+    display: inline-block;
+}
+
 .site-footer {
 	margin-bottom: $spacing-unit;
 	font-size: 1.2rem;
 	div > div:last-child {
 		text-align: right;
 	}
+}
+
+img + em{
+    font-size: 1rem;
+    color: $light-gr;
+    text-align: center;
+    display: block;
+}
+
+img{
+    max-height: 250px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.img_xs >img{
+    max-height: 150px;
+    width: auto;
 }
