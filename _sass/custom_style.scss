@@ -94,9 +94,9 @@ main {
     Site header
 */
 
-.site-header {
+// .site-header {
 	//   height: 120px;
-}
+// }
 
 .site-nav {
 	ul {
@@ -138,9 +138,11 @@ main {
 	}
 }
 
-//   .page-heading {
-
-//   }
+.abstr {
+    font-size: 1.9rem;
+    font-style: italic;
+    color: $light-gr;
+}
 
 .post-list-heading {
 	border-bottom: 1px solid $almost-white;
