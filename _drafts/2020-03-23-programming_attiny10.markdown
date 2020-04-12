@@ -5,19 +5,19 @@ date:   2020-03-23 20:20:00 +0000
 categories: attiny10
 ---
 
-To do
+The ATtiny10 is an intriguing little device with plenty of capabilities. It's size pushes your creativity but first, it needs to be programmed. This can get a little tricky but here I suggest two easy ways to get started.
 <!-- excer -->
 {: .abstr}
 
 ## A very tiny microcontroller
 
-to do
+The Atmel ATtiny10[^1] is a tiny AVR microcontroller with a 6 pin SOT23 package that despite the size offers very interesting features. It has 1kb of flash memory, 32 bytes of RAM, a 16bit Timer, 8bit ADC, watchdog and the list doesn't end here. Needless saying that you can get some real fun with this mix of size and specs supported by some creativity [^2]. So at this point, you already placed your order but you haven't considered how to get the code inside this little thing. This is indeed a head-scratching issue: you can't get the code inside this little thing plugging in the USB cable like an Arduino.  Instead, what's needed is an interface called TPI (Tiny Programming Interface). But don't worry, following the notes below you'll be able to program the ATtiny10 in **two different ways**!
 
 ## The Platformio way
 [Platformio](https://platformio.org/) is an open-source, cross-platform IDE for embedded systems. It supports a lot of boards and frameworks (including Arduino, yes) and is available as an extension for Visual Studio Code which is a big upside compared to the crappy Arduino IDE (I admire the Arduino project but the IDE it's not a piece of art). 
 I discovered Platformio looking for a way to get around the massive limitations of Arduino IDE that started soon to feel too tight for my projects and my need of control over settings. This great IDE offers different levels of usage: if you want to use just the basic features (using it the same way as Arduino IDE, for example) you can be up and running in few clicks but you also have large flexibility on the project file structure and on the compiling and uploading processes. I must say it takes a while to get familiar with the configuration files but it will pay off quickly giving you all the control over your project. All this is missing in the ArduinoIDE (as of February 2020) and may be included shortly in the new Arduino PRO IDE but for the moment Platformio is my standard choice.
 
-Programming the ATtiny10/9/5 [^^All the instruction below assume to use the board ATtiny10 but setting up the ATtiny9 or 5 (or other boards) is similar.] family with Platformio is not (yet) an out of the box feature but can be easily implemented. Follow the description below and in 10 minutes you'll be ready. 
+Programming the ATtiny10/9/5 [^3] family with Platformio is not (yet) an out of the box feature but can be easily implemented. Follow the description below and in 10 minutes you'll be ready. 
 
 ### 1. Create a new board
 If you just installed Platformio you will need to install the Atmel AVR platform. That's easy: go to Platforms icon on the left-hand side, in the search input type Atmel AVR and install it.
@@ -154,3 +154,15 @@ Just follow the schematic below for the wiring.
 
 ![ATtiny10 blink circuit](/assets/img/att10_circ.png)
 *ATtiny10 blink circuit*
+
+***
+
+## References & Notes
+
+[^1]:ATtiny10 [info](https://www.microchip.com/wwwproducts/en/ATtiny10)
+
+[^2]: Some amazing projects using an ATtiny10: [a dice](https://cpldcpu.wordpress.com/2016/11/26/dice10-electronic-dice-controlled-by-two-gpio/), [noiseplug](https://vimeo.com/47380710]), [jumbo LED](https://hackaday.io/project/164369-jumbo-led-circular-beacon)
+
+[^3]: All the instruction below assume to use the board ATtiny10 but setting up the ATtiny9 or 5 (or other boards) is similar.
+
+**Bonus!** [Technoblogy](http://www.technoblogy.com/show?1YQY) has an interesting tutorial to program the ATtiny10 with an Arduino and a lot of other interesting stuff.
