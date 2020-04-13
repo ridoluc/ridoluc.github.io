@@ -11,7 +11,12 @@ The ATtiny10 is an intriguing little device with plenty of capabilities. It's si
 
 ## A very tiny microcontroller
 
-The Atmel ATtiny10[^1] is a tiny AVR microcontroller with a 6 pin SOT23 package that despite the size offers very interesting features. It has 1kb of flash memory, 32 bytes of RAM, a 16bit Timer, 8bit ADC, watchdog and the list doesn't end here. Needless saying that you can get some real fun with this mix of size and specs supported by some creativity [^2]. So at this point, you already placed your order but you haven't considered how to get the code inside this little thing. This is indeed a head-scratching issue: you can't get the code inside this little thing plugging in the USB cable like an Arduino.  Instead, what's needed is an interface called TPI (Tiny Programming Interface). But don't worry, following the notes below you'll be able to program the ATtiny10 in **two different ways**!
+The Atmel ATtiny10[^1] is a tiny AVR microcontroller with a 6 pin SOT23 package that despite the size offers very interesting features. It has 1kb of flash memory, 32 bytes of RAM, a 16bit Timer, 8bit ADC, watchdog and the list doesn't end here. Needless saying that you can get some real fun with this mix of size and specs supported by some creativity [^2]. 
+
+![ATtiny10](/assets/img/att10.png)
+*An ATtiny10. Source: [Microchip](https://www.microchip.com/_images/products/medium/8bd6e276a4bc24486c30a128d6623655.png)*
+
+So at this point, you already placed your order but you haven't considered how to get the code inside this little thing. This is indeed a head-scratching issue: you can't get the code inside this little thing plugging in the USB cable like an Arduino.  Instead, what's needed is an interface called TPI (Tiny Programming Interface). But don't worry, following the notes below you'll be able to program the ATtiny10 in **two different ways**!
 
 ## The Platformio way
 [Platformio](https://platformio.org/) is an open-source, cross-platform IDE for embedded systems. It supports a lot of boards and frameworks (including Arduino, yes) and is available as an extension for Visual Studio Code which is a big upside compared to the crappy Arduino IDE (I admire the Arduino project but the IDE it's not a piece of art). 
@@ -55,13 +60,12 @@ Under the src folder from the Platformio file explorer panel create a new main.c
 Fill it with the following code:
 ```
 #include <avr/io.h>
-#include <stdint.h>
 
-int main (void) {
-  DDRB = 1;                       // PB0 as an output
-  TCCR0A = 1<<COM0A0 | 0<<WGM00;  // Toggle OC0A, CTC mode
-  TCCR0B = 1<<WGM02 | 3<<CS00;    // CTC mode; use OCR0A; /64
-  OCR0A = 15620;                  // 1 second; ie 2Hz
+int main () {
+  DDRB = 1;                    // PB0 as an output
+  TCCR0A = 1<<COM0A0;          // Toggle OC0A
+  TCCR0B = 1<<WGM02 | 3<<CS00; // CTC mode and set prescaler to 64
+  OCR0A = 3905;                // Frequency 2Hz
   while (1);
 }
 ```
@@ -74,9 +78,12 @@ This is from the avrdude documentation:
 
 ```
 -D
-Disable auto erase for flash. When the -U option with flash memory is specified, avrdude will perform a chip erase before starting any of the programming operations, since it generally is a mistake to program the flash without performing an erase first. This option disables that [...]
+Disable auto erase for flash. When the -U option with flash memory is specified, avrdude 
+will perform a chip erase before starting any of the programming operations, since it 
+generally is a mistake to program the flash without performing an erase first. This 
+option disables that [...]
 ```
-Platformio has different ways to upload the program that you can select from the icon `Run Task...` on the bottom left corner. Two of these are Program and Upload. Apparently if you select the Program task then the -D flag is not added and the entire memory is erased. However, if you want to use the *Upload* button Platformio will run the Upload task without erasing the memory. In this case when avrdude is verifying if the code has been uploaded correctly it will give an error because part of the old program memory is still there. We want to still use the button (to my knowledge there is no way to wire the Upload Icon to Program task) so we need to add this line in the platformio.ini file under the ATtiny10 environment
+Platformio has different ways to upload the program that you can select from the icon *Run Task* on the bottom left corner. Two of these are Program and Upload. Apparently if you select the Program task then the -D flag is not added and the entire memory is erased. However, if you want to use the *Upload* button Platformio will run the Upload task without erasing the memory. In this case when avrdude is verifying if the code has been uploaded correctly it will give an error because part of the old program memory is still there. We want to still use the button (to my knowledge there is no way to wire the Upload Icon to Program task) so we need to add this line in the platformio.ini file under the ATtiny10 environment
 ```
 [env:attiny10]
 platform = atmelavr
@@ -93,9 +100,21 @@ avrdude: error: program enable: target doesn't answer. 1
 avrdude: initialization failed, rc=-1
          Double check connections and try again, or use -F to override this check.
 ```
-To update the firmware you can refer to this simple process: you just need another USBASP or Arduino, some jumpers and 10 minutes of time.
-Once the programmer has got a new shiny firmware you can upload the program on the ATtiny just pressing the upload button on the bottom left corner of the IDE.
+To update the firmware you can refer to [this simple process]({% post_url 2020-03-3-usbaspupdate %}): you just need another USBASP or Arduino, some jumpers and 10 minutes of time.
+Also note that to program the Non Volatile Memory (NVM, flash memory) you **must** apply 5V between VCC and GND. From the ATtiny10 datasheet: 
+
+```
+NVM can be programmed at 5V, only. In some designs it may be necessary to protect 
+components that can not tolerate 5V with, for example, series resistors
+``` 
+The USBASP has the option to provide 3.3V or 5V. To select the right voltage you need to change the jumper provided in most of USBASP clones.
+
+![USBASP jumper for selecting the voltage](/assets/img/usbasp_5v_jp.JPG)
+*- You need to provide 5V to program the flash memory -*
+
+Once the programmer has got a new shiny firmware and 5V are properly provided you can upload the program on the ATtiny just pressing the upload button on the bottom left corner of the IDE.
 Now go to the last part of the tutorial to see if everything has worked out correctly.
+
 
 ## The terminal way
 
@@ -109,10 +128,10 @@ Where you get it? On the web, surely. However, if you have Arduino installed, yo
 To call avr-gcc program you have three options. *First* one you copy all the path and paste on the terminal to execute the program. The *second* option is to add avr-gcc to the system PATH. *Third*,  you can copy the avr-gcc file in the same folder of your code and you can execute it just typing `./avr-gcc`. I will show the commands below assuming this third option because it's the easiest to show.
 
 First thing to do is to link the code in a blink.o file. These are options that will be used:
-- Os: defines the optimization;
-- DF_CPU: defines the clock speed in the micro-controller;
-- mmcu: is needed to generate code for a specific device.
-- c:  compiling command followed by the name of the file
+- *Os*: defines the optimization;
+- *DF_CPU*: defines the clock speed in the micro-controller;
+- *mmcu*: is needed to generate code for a specific device.
+- *c*:  compiling command followed by the name of the file
 
 All together:
 
@@ -133,7 +152,8 @@ All this process is usually defined into a makefile so that it can be executed a
 You can also skip this part and get the HEX file compiled by Platformio ready to be uploaded in the next step (but once you have Platformio in place then you can just upload it from there!)
 
 ### 3. Upload the code
-The last step is to upload the code and the way we are going to use avrdude and the programmer USBASP. Again you can find avrdude on the web or find it in the Arduino folder.
+The last step is to upload the code and the way we are going to use avrdude and the programmer USBASP.  As described above, the USBASP has to have an up-to-date firmware and you need to provide 5V to program the flash memory. 
+Again you can find avrdude on the web or find it in the Arduino folder.
 The avrdude executable will be at the following location: 
 ```
 "ARDUINO FOLDER"/Java/hardware/tools/avr/bin/
@@ -155,9 +175,15 @@ Just follow the schematic below for the wiring.
 ![ATtiny10 blink circuit](/assets/img/att10_circ.png)
 *ATtiny10 blink circuit*
 
+
+***
+## Notes
+
+- **Bonus!** [Technoblogy](http://www.technoblogy.com/show?1YQY) has an interesting tutorial to program the ATtiny10 with an Arduino and a lot of other interesting stuff.
+
 ***
 
-## References & Notes
+## References & 
 
 [^1]:ATtiny10 [info](https://www.microchip.com/wwwproducts/en/ATtiny10)
 
@@ -165,4 +191,3 @@ Just follow the schematic below for the wiring.
 
 [^3]: All the instruction below assume to use the board ATtiny10 but setting up the ATtiny9 or 5 (or other boards) is similar.
 
-**Bonus!** [Technoblogy](http://www.technoblogy.com/show?1YQY) has an interesting tutorial to program the ATtiny10 with an Arduino and a lot of other interesting stuff.
