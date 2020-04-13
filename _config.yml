@@ -30,6 +30,7 @@ show_excerpts: true
 excerpt_separator: "<!-- excer -->"
 sass:
     sass_dir: _sass
+    style: compressed
 
 plugins:
   - jekyll-feed
