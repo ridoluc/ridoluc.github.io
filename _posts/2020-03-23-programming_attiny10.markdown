@@ -183,7 +183,7 @@ Just follow the schematic below for the wiring.
 
 ***
 
-## References & 
+## References 
 
 [^1]:ATtiny10 [info](https://www.microchip.com/wwwproducts/en/ATtiny10)
 
