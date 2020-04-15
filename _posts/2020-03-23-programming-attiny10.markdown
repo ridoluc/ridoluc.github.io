@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Programming the ATtiny10
+title:  ATtiny10 Programming
 date:   2020-03-23 20:20:00 +0000
 categories: attiny10
 ---
