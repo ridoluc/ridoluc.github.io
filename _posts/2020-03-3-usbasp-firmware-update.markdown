@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Update USBASP firmware
+title:  "USBASP firmware update"
+description: "USBASP firmware update tutorial with Arduino. The USBASP is a popular programmer for AVR controllers frequently sold with an outdated firmware. Find out how to easily update it using Arduino and avrdude."
 date:   2020-03-2 20:20:00 +0000
 categories: attiny85 attiny10
 ---

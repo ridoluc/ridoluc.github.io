@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  Bit bang i2c protocol
+title:  "Bit bang i2c protocol"
+descritpion: "Write simple code to implement the two wire protocol (I2C) with little program space for Arduino, ATtiny85 and other microcontrollers."
 date:   2020-02-10 20:20:00 +0000
 categories: attiny85 i2c attiny10
 ---
 
-The I2C is a widely used serial bus to exchange data between two or more devices. There are many products equipped with such an interface and also several libraries to easily employ this bus. However, the most common libraries are built to be robust and versatile. This may present limitations for some niche applications. Therefore, you may find necessary to write specific code for your project. Turns out that implementing this protocol is relatively simple and yields substantial benefits.
+The I2C is a widely used serial bus to exchange data between two or more devices. There are many products equipped with such an interface and also several libraries to easily employ this protocol. However, the most common libraries are built to be robust and versatile. This may present limitations for some niche applications. Therefore, you may find necessary to write specific code for your project. Turns out that implementing this protocol is relatively simple and yields substantial benefits.
 <!-- excer -->
 {: .abstr}
 

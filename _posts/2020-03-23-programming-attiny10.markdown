@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  ATtiny10 Programming
+title:  "ATtiny10 Programming"
+description: "Programming the AVR ATTiny10 microcontroller using Platformio and terminal with avrdude and USBASP. ATtiny10 program upload step by step tutorial"
 date:   2020-03-23 20:20:00 +0000
-categories: attiny10
+categories: attiny10 
 ---
 
 The ATtiny10 is an intriguing little device with plenty of capabilities. It's size pushes your creativity but first, it needs to be programmed. This can get a little tricky but here I suggest two easy ways to get started.
@@ -100,7 +101,7 @@ avrdude: error: program enable: target doesn't answer. 1
 avrdude: initialization failed, rc=-1
          Double check connections and try again, or use -F to override this check.
 ```
-To update the firmware you can refer to [this simple process]({% post_url 2020-03-3-usbaspupdate %}): you just need another USBASP or Arduino, some jumpers and 10 minutes of time.
+To update the firmware you can refer to [this simple process]({% post_url 2020-03-3-usbasp-firmware-update %}): you just need another USBASP or Arduino, some jumpers and 10 minutes of time.
 Also note that to program the Non Volatile Memory (NVM, flash memory) you **must** apply 5V between VCC and GND. From the ATtiny10 datasheet: 
 
 ```
