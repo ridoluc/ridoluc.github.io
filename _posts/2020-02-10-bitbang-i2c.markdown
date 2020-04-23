@@ -1,9 +1,11 @@
 ---
 layout: post
 title:  "Bit bang i2c protocol"
-descritpion: "Write simple code to implement the two wire protocol (I2C) with little program space for Arduino, ATtiny85 and other microcontrollers."
+description: "Write simple code to implement the two wire protocol (I2C) with little program space for Arduino, ATtiny85 and other microcontrollers."
 date:   2020-02-10 20:20:00 +0000
-categories: attiny85 i2c attiny10
+tags: attiny85 i2c attiny10
+redirect_from:
+  - /attiny85/i2c/attiny10/2020/02/10/bitbang-i2c.html
 ---
 
 The I2C is a widely used serial bus to exchange data between two or more devices. There are many products equipped with such an interface and also several libraries to easily employ this protocol. However, the most common libraries are built to be robust and versatile. This may present limitations for some niche applications. Therefore, you may find necessary to write specific code for your project. Turns out that implementing this protocol is relatively simple and yields substantial benefits.
@@ -23,7 +25,7 @@ The I2C bus uses two wires to connect a master node with multiple slave nodes. T
 
 
 The start condition is defined by the SCL line being left afloat (so that it's pulled-high by the resistors) and the SDA line pulled low by the master that wants to start the communication.
-![i2c_protocol](/assets/img/i2c_protocol.png)
+![i2c_protocol]({{ site.baseurl }}/assets/img/i2c_protocol.png)
 *- Start and stop representation -*
 
 The stop signal is indicated by the SDA line transitioning from low to high, while the SCL line is high.

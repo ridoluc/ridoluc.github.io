@@ -1,9 +1,13 @@
 ---
 layout: post
-title:  "ATtiny10 Programming"
+title:  "ATtiny10 Programming with Platformio and Terminal"
 description: "Programming the AVR ATTiny10 microcontroller using Platformio and terminal with avrdude and USBASP. ATtiny10 program upload step by step tutorial"
 date:   2020-03-23 20:20:00 +0000
-categories: attiny10 
+tags: attiny10 
+#slug: "attiny10-programming-platformio-terminal"
+redirect_from:
+  - /attiny10/2020/03/23/programming-attiny10.html
+  - /attiny10/2020/03/23/programming_attiny10.html
 ---
 
 The ATtiny10 is an intriguing little device with plenty of capabilities. It's size pushes your creativity but first, it needs to be programmed. This can get a little tricky but here I suggest two easy ways to get started.
@@ -14,7 +18,7 @@ The ATtiny10 is an intriguing little device with plenty of capabilities. It's si
 
 The Atmel ATtiny10[^1] is a tiny AVR microcontroller with a 6 pin SOT23 package that despite the size offers very interesting features. It has 1kb of flash memory, 32 bytes of RAM, a 16bit Timer, 8bit ADC, watchdog and the list doesn't end here. Needless saying that you can get some real fun with this mix of size and specs supported by some creativity [^2]. 
 
-![ATtiny10](/assets/img/att10.png)
+![ATtiny10]({{ site.baseurl }}/assets/img/att10.png)
 *An ATtiny10. Source: [Microchip](https://www.microchip.com/_images/products/medium/8bd6e276a4bc24486c30a128d6623655.png)*
 
 So at this point, you already placed your order but you haven't considered how to get the code inside this little thing. This is indeed a head-scratching issue: you can't get the code inside this little thing plugging in the USB cable like an Arduino.  Instead, what's needed is an interface called TPI (Tiny Programming Interface). But don't worry, following the notes below you'll be able to program the ATtiny10 in **two different ways**!
@@ -53,7 +57,7 @@ Save and close it. Now Platformio will show the ATtiny10 in the boards list.
 ### 2. Start a new project
 From the Platformio Home page in VisualStudio Code click on **New Project**. Then insert the project name and from the board drop-down list select the ATtiny10.
 
-![New project window](/assets/img/new_proj_pio.png)
+![New project window]({{ site.baseurl }}/assets/img/new_proj_pio.png)
 *The Platformio New Project window*
 
 ### 3. Do some code
@@ -110,7 +114,7 @@ components that can not tolerate 5V with, for example, series resistors
 ``` 
 The USBASP has the option to provide 3.3V or 5V. To select the right voltage you need to change the jumper provided in most of USBASP clones.
 
-![USBASP jumper for selecting the voltage](/assets/img/usbasp_5v_jp.JPG)
+![USBASP jumper for selecting the voltage]({{ site.baseurl }}/assets/img/usbasp_5v_jp.JPG)
 *- You need to provide 5V to program the flash memory -*
 
 Once the programmer has got a new shiny firmware and 5V are properly provided you can upload the program on the ATtiny just pressing the upload button on the bottom left corner of the IDE.
@@ -173,7 +177,7 @@ After copying the files inside the same folder of the .hex file you can upload t
 Whatever the path you choose, the last thing to do is to check the ATtiny10 is working as expected.
 Just follow the schematic below for the wiring.
 
-![ATtiny10 blink circuit](/assets/img/att10_circ.png)
+![ATtiny10 blink circuit]({{ site.baseurl }}/assets/img/att10_circ.png)
 *ATtiny10 blink circuit*
 
 

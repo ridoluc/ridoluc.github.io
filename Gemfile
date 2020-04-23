@@ -30,6 +30,7 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-seo-tag", "~> 2.6"
+  gem "jekyll-redirect-from"
+  gem "jekyll-seo-tag", github: "jekyll/jekyll-seo-tag"
   gem "jekyll-sitemap"
 end

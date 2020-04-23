@@ -3,7 +3,9 @@ layout: post
 title:  "USBASP firmware update"
 description: "USBASP firmware update tutorial with Arduino. The USBASP is a popular programmer for AVR controllers frequently sold with an outdated firmware. Find out how to easily update it using Arduino and avrdude."
 date:   2020-03-2 20:20:00 +0000
-categories: attiny85 attiny10
+tags: attiny85 attiny10
+redirect_from:
+  - /attiny85/attiny10/2020/03/02/usbasp-firmware-update.html
 ---
 
 The USBASP is a popular and inexpensive programmer for AVR controllers. These are frequently sold with an outdated firmware. Find out below how to easily update it to support TPI and get rid of warning messages.  
@@ -18,7 +20,7 @@ avrdude : warning : Can not Set sck period . usbasp please check for firmware up
 However, this is just a warning and the programmer is probably still uploading the files correctly. One feature your USBASP is missing is the support for Tiny Programming Interface (TPI)[^2] required to program smaller AVR microcontrollers like the ATtiny10. Therefore if you want to program the ATtiny10 you better update the USBASP.
 Updating the firmware it's relatively easy and can be done with just an Arduino and some jumpers.
 
-![Common USBASP](/assets/img/USBASP.jpeg)
+![Common USBASP]({{ site.baseurl }}/assets/img/USBASP.jpeg)
 *- a common USBASP programmer -*
 
 ## Set up Arduino as IPS
@@ -44,7 +46,7 @@ The following scheme shows the connections between the Arduino pins and the USBA
 |11|  1 (MOSI)|
 |10|  5 (RESET)|
 
-![USBASP Pinout](/assets/img/USBASP-pinout.png)
+![USBASP Pinout]({{ site.baseurl }}/assets/img/USBASP-pinout.png)
 {: .img_xs}
 
 
@@ -52,7 +54,7 @@ The following scheme shows the connections between the Arduino pins and the USBA
 Make sure you **close the JP2 in on the USBASP board**. Without doing so the board cannot be reprogrammed.
 To close jumper 2 on the USBASP you can solder something to it or simply use a wire and tighten it to both holes. Make sure it doesn't move and lose the connection halfway the firmware upload.
 
-![Jumper to be closed](/assets/img/USBASP-JP2.png)
+![Jumper to be closed]({{ site.baseurl }}/assets/img/USBASP-JP2.png)
 *- close the jumper using even just a wire or a paper clip. No need to solder. -*
 
 ## Firmware

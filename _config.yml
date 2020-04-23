@@ -20,12 +20,15 @@
 
 title: bitbanging
 email: lr@bitbanging.space
-description: "Programming, electronics, and maths problems" # this means to ignore newlines until "baseurl:"
+description: "A space to share notes and ideas mixing programming, mathematics and electronics." 
+tagline: "Programming, electronics and maths notes"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://bitbanging.space" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://www.bitbanging.space" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
+logo: /assets/logo.svg
 github_username:  ridoluc
 # Build settings
+permalink: /posts/:slug
 show_excerpts: true
 excerpt_separator: "<!-- excer -->"
 sass:
@@ -34,6 +37,7 @@ sass:
 
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
   - jekyll-sitemap     #should be last
 
 # Exclude from processing.
