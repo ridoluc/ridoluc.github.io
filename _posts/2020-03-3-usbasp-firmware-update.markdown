@@ -6,6 +6,8 @@ date:   2020-03-2 20:20:00 +0000
 tags: attiny85 attiny10
 redirect_from:
   - /attiny85/attiny10/2020/03/02/usbasp-firmware-update.html
+
+featured_img: "/assets/img/USBASP.jpeg"
 ---
 
 The USBASP is a popular and inexpensive programmer for AVR controllers. These are frequently sold with an outdated firmware. Find out below how to easily update it to support TPI and get rid of warning messages.  

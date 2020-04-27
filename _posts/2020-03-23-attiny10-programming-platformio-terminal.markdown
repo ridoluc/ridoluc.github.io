@@ -8,6 +8,8 @@ tags: attiny10
 redirect_from:
   - /attiny10/2020/03/23/programming-attiny10.html
   - /attiny10/2020/03/23/programming_attiny10.html
+
+featured_img: "/assets/img/att10_1.jpg"
 ---
 
 The ATtiny10 is an intriguing little device with plenty of capabilities. It's size pushes your creativity but first, it needs to be programmed. This can get a little tricky but here I suggest two easy ways to get started.
@@ -18,8 +20,8 @@ The ATtiny10 is an intriguing little device with plenty of capabilities. It's si
 
 The Atmel ATtiny10[^1] is a tiny AVR microcontroller with a 6 pin SOT23 package that despite the size offers very interesting features. It has 1kb of flash memory, 32 bytes of RAM, a 16bit Timer, 8bit ADC, watchdog and the list doesn't end here. Needless saying that you can get some real fun with this mix of size and specs supported by some creativity [^2]. 
 
-![ATtiny10]({{ site.baseurl }}/assets/img/att10.png)
-*An ATtiny10. Source: [Microchip](https://www.microchip.com/_images/products/medium/8bd6e276a4bc24486c30a128d6623655.png)*
+![ATtiny10]({{ site.baseurl }}/assets/img/att10_1.jpg)
+*- An ATtiny10 on a breakout board-*
 
 So at this point, you already placed your order but you haven't considered how to get the code inside this little thing. This is indeed a head-scratching issue: you can't get the code inside this little thing plugging in the USB cable like an Arduino.  Instead, what's needed is an interface called TPI (Tiny Programming Interface). But don't worry, following the notes below you'll be able to program the ATtiny10 in **two different ways**!
 
