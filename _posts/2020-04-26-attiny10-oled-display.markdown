@@ -150,7 +150,7 @@ Before writing something I needed to turn OFF each pixel meaning write zeros to 
 The 128x32 display memory is organised in 128 columns each made by 4 pages (or rows) with a height of 8 bits.
 In the horizontal addressing mode (that I set in the initialization), when the RAM is written the pointer automatically is increased by 1 and when the end is reached it will start from 0 again.
 
-![SSD1306 memory organization](/assets/img/ATtiny-OLED/OLED_mapping.jpg)
+![SSD1306 memory organization](/assets/img/ATtiny-OLED/OLED-mapping.jpg)
 *- From the datasheet. It shows the 128x64 display so there are 8 pages instead of 4-*
 
 To clear the display, I sent the command `0x00` for 128x4 times (or 256x2 will produce the same result).
@@ -168,7 +168,7 @@ for (uint8_t i = 0; i < 128; i++)
 stop();
 
 ```
-To have a clear display, I occupied approximately 200 bytes.
+To have a display completely cleared, I occupied approximately 200 bytes.
 
 ## Draw Something
 Next, I tried to draw something on the screen. The logic is the same as clearing the display. Instead of sending `0s` I wrote also `1s` organized in bytes. Each byte represents one column in the page. 
@@ -430,7 +430,7 @@ With the following commands I set the scolling from left to right for all the fo
 // stop();
 
 ```
-Then I filled the RAM with a repeated pattern and here is the result:
+Then I filled the RAM with a repeated pattern and here it is the result:
 
 ![OLED animation](/assets/img/ATtiny-OLED/oledgif.gif)
 *- Pattern OLED animation -*
@@ -439,13 +439,20 @@ Then I filled the RAM with a repeated pattern and here is the result:
 Writing a few letters to an OLED display takes just above 300 kilobytes.  
 This leaves the remaining 600 kB of space to be filled with fun and creativity!
 
-Further work I will probably do on this is to optimize and reduce the space used by the I2C functions. I'll be happy to have suggestions.
+Further work I will probably do on this is to optimize and reduce the space used by the I2C functions. Probably writing it in assembly.
 
 Next is to think of some nice ways to use it and maybe put everything on a custom PCB. 
 
-In case you have ideas on what to do with an OLED and an ATtiny10 let me know. I hope I gave some basic tools to people more creative than I am. 
+In case you have ideas on what to do with an OLED and an ATtiny10 let me know. I hope I suggested some ideas to people more creative than I am. 
+
+***
+
+## Other posts you may be interested in
+- [Bit Bang I2C protocol]({%post_url 2020-02-10-bitbang-i2c%})
+- [ATtiny10 Programming with Platformio and Terminal]({%post_url 2020-03-23-attiny10-programming-platformio-terminal%})
 
 ***
 
 ## References & Notes
 [^1]: The SSD1306 [datasheet](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf). Note that this refers to the 128x64 matrix. For the 128x32 version, some adjustments are needed. 
+
