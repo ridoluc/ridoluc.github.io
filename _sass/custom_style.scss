@@ -295,3 +295,16 @@ pre > code {
 	max-height: 450px;
 	overflow-y: scroll;
 }
+
+
+/*
+* Comments
+*/
+
+#comment_box{
+	margin-top: 100px;
+
+	>hr+h2{
+		margin-bottom: 3.5rem;
+	}
+}
