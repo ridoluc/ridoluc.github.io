@@ -184,9 +184,9 @@ Just follow the schematic below for the wiring.
 
 
 ***
-## Notes
-
-- **Bonus!** [Technoblogy](http://www.technoblogy.com/show?1YQY) has an interesting tutorial to program the ATtiny10 with an Arduino and a lot of other interesting stuff.
+## Other posts you may be interested in
+- [OLED Display driven by ATtiny10]({%post_url 2020-04-26-attiny10-oled-display%})
+- [Technoblogy](http://www.technoblogy.com/show?1YQY) shows how to program the ATtiny10 with an Arduino and a lot of other interesting stuff.
 
 ***
 
