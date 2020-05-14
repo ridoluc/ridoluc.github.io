@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "OLED Display driven by ATtiny10"
-description: "How to initialize and  a "
+description: "How to initialize and drive an OLED display with an ATtiny10"
 date:   2020-04-25 20:00:00 +0000
 tags: attiny10 
 #slug: "attiny10-programming-platformio-terminal"

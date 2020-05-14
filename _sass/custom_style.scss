@@ -223,7 +223,6 @@ main {
 	/* border-left: #eee 1px solid; */
 	border-radius: 5px;
 	overflow: hidden;
-	
 
 	img {
 		max-width: fit-content;
@@ -290,21 +289,28 @@ img {
 	max-height: 150px;
 	width: auto;
 }
+.img_xl > img {
+	max-height: none;
+	max-width: 95%;
+
+	@media (min-width: 550px) {
+		max-width: 80%;
+	}
+}
 
 pre > code {
 	max-height: 450px;
 	overflow-y: scroll;
 }
 
-
 /*
 * Comments
 */
 
-#comment_box{
+#comment_box {
 	margin-top: 100px;
 
-	>hr+h2{
+	> hr + h2 {
 		margin-bottom: 3.5rem;
 	}
 }
