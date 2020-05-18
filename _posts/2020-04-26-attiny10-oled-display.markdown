@@ -436,7 +436,7 @@ Then I filled the RAM with a repeated pattern and here it is the result:
 *- Pattern OLED animation -*
 
 ## Conclusions
-Writing a few letters to an OLED display takes just above 300 kilobytes.  
+Writing a few letters to an OLED display takes just above 300 bytes.  
 This leaves the remaining 600 kB of space to be filled with fun and creativity!
 
 Further work I will probably do on this is to optimize and reduce the space used by the I2C functions. Probably writing it in assembly.
