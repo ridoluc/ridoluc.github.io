@@ -164,6 +164,10 @@ If you have suggestions let me know in the comments.
 
 ---
 
+## Other posts you may be interested in
+- [OLED Display driven by ATtiny10]({%post_url 2020-04-26-attiny10-oled-display%})
+- [Bit Bang I2C protocol]({%post_url 2020-02-10-bitbang-i2c%})
+
 ## Notes
 [^1]: I called the function twice because if there was just one the compiler would optimize it and it wouldn't show real metrics. 
 [^2]: Check the [AVR200 application note](http://ww1.microchip.com/downloads/en/AppNotes/doc0936.pdf).
