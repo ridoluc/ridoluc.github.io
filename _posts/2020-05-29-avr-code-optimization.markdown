@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AVR Optimization #1 - Avoid floating-point and other considerations"
-description: ""
+description: "Code optimization tips for AVR microcontrollers. ATtiny85 self-contained function for sound generation with buzzer"
 date:   2020-05-29 22:00:00 +0000
 tags: attiny85 optimization
 #slug: ""
