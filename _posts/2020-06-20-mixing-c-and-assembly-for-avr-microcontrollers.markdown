@@ -128,13 +128,13 @@ int main(){
 And this is the assembly function in a file called *delay.S*:
 
 ```
-.global delay
-
 ; Delay routine 
 ; Input:    Number of iterations: 16-bit in R24 and R25
 ;           Each iteration takes 4us (0.004ms)
 ;           Return takes 4us
 ;           100ms = (25000)*0.004 ms
+
+.global delay
 delay: 
     subi    R24, 0x01   ; Subtract 1
     sbci    R25, 0x00   ; Subtract 0 with carry
@@ -149,6 +149,13 @@ avr-gcc -g -Wall -Os -DF_CPU=1000000 -mmcu=attiny85 -c delay.S
 avr-gcc -g -mmcu=attiny85 -o firmware.elf main.o delay.o
 avr-objcopy -O ihex firmware.elf firmware.hex
 ```
+
+---
+
+## Other posts you may be interested in
+- [AVR Optimization #1 - Avoid floating-point and other considerations]({%post_url 2020-05-29-avr-code-optimization%})
+- [OLED Display driven by ATtiny10]({%post_url 2020-04-26-attiny10-oled-display%})
+
 
 ## References
 [^1]: avr-libc [documentation](https://www.nongnu.org/avr-libc/user-manual/assembler.html) on assembly programs.
