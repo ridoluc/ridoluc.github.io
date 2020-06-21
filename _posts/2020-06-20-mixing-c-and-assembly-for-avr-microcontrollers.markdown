@@ -10,7 +10,7 @@ featured_img: "/assets/img/mix-c-asm/asm_code_image.png"
 ---
 
 
-Mix C and Assembly code to optimize space and performances.
+Modern compilers are really good at translating programming language into machine code. At times, however, you may find useful to freely manipulate registers and CPU operations. GCC gives you the option to mix C and Assembly code but it's helpful to follow certain guidelines.
 <!-- excer -->
 {: .abstr}
 
