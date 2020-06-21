@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AVR Optimization #2: Mixing C and and Assembly"
-description: "Guidelines to use C and Assmbly code in the same project"
+description: "Guidelines to use C and Assembly code in the same project"
 date:   2020-06-20 22:00:00 +0000
 tags: attiny85 optimization
 #slug: "--"
