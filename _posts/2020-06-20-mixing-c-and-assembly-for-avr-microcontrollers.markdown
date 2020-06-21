@@ -116,10 +116,10 @@ Here is the *main.c* file calling the `main` function:
 void delay(int);
 
 int main(){
-    DDRB = 0x01;        // Set Pin 1 as output
+    DDRB = 0x01;        // Set Pin 0 as output
     while(1){
-        delay(10000);    // Call assembly function 
-        PORTB ^= 0x01;  // Toggle Pin 1
+        delay(50000);    // Call assembly function for ~200ms
+        PORTB ^= 0x01;  // Toggle Pin 0
     }
     
 }
