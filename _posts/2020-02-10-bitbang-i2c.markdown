@@ -25,7 +25,7 @@ The I2C bus uses two wires to connect a master node with multiple slave nodes. T
 
 
 The start condition is defined by the SCL line being left afloat (so that it's pulled-high by the resistors) and the SDA line pulled low by the master that wants to start the communication.
-![i2c_protocol]({{ site.baseurl }}/assets/img/i2c_protocol.png)
+![i2c_protocol]({{ site.baseurl }}/assets/img/i2c_bb/i2c_protocol.png)
 *- Start and stop representation -*
 
 The stop signal is indicated by the SDA line transitioning from low to high, while the SCL line is high.
