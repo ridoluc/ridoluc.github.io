@@ -448,6 +448,7 @@ In case you have ideas on what to do with an OLED and an ATtiny10 let me know. I
 ***
 
 ## Other posts you may be interested in
+- [Tiny videogame for the ATtiny10]({%post_url 2020-07-03-videogame-for-attiny10%})
 - [Bit Bang I2C protocol]({%post_url 2020-02-10-bitbang-i2c%})
 - [ATtiny10 Programming with Platformio and Terminal]({%post_url 2020-03-23-attiny10-programming-platformio-terminal%})
 
