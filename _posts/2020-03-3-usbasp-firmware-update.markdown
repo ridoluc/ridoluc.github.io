@@ -25,7 +25,7 @@ Updating the firmware it's relatively easy and can be done with just an Arduino 
 ![Common USBASP]({{ site.baseurl }}/assets/img/USBASP/USBASP.jpeg)
 *- a common USBASP programmer -*
 
-## Set up Arduino as IPS
+## Set up Arduino as ISP
 
 We need Arduino to act as a programmer. To do so we just need to upload a sketch already available within the Arduino examples.
 Therefore from the Arduino IDE:
