@@ -2,21 +2,37 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="{{ "/assets/main.css" |
-	relative_url }}">
+	<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 	<link
 		rel="shortcut icon"
 		type="image/png"
 		href="{{site.url}}/favicon.png"
 	/>
 
-	{%- feed_meta -%} {%- if jekyll.environment == 'production' -%} {%- include
-	google-analytics.html -%} {%- endif -%}
+	{%- feed_meta -%} 
+	{%- if jekyll.environment == 'production' -%} 
+	{%- include
+	google-analytics.html -%} 
+	{%- endif -%}
 
+	<!-- for mathjax support -->
+	{% if page.usemathjax %}
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		TeX: { equationNumbers: { autoNumber: "AMS" } }
+		});
+	</script>
+	<script
+		type="text/javascript"
+		async
+		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+	></script>
+	{% endif %}
+	
 	<link
 		rel="stylesheet"
 		type="text/css"
 		href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
 	/>
-	{%- seo -%} 
+	{%- seo -%}
 </head>

@@ -2,7 +2,7 @@
 layout: post
 title:  "Programming the ATtiny 1-series"
 description: "Easy way to program the AVR ATtiny 1-series and 0-series using just a usb to serial adapter and Platformio. Programming ATtiny412, ATtiny816, ATtiny817"
-date:   2020-09-26 22:00:00 +0000
+date:   2020-09-27 22:00:00 +0000
 tags: attiny412
 #slug: "--"
 
