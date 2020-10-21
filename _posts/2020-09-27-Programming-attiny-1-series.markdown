@@ -111,7 +111,8 @@ Copy the code below in the similar section where all the headers are defined.
 ### Modify file avrxmega3.xn
 
 Open the file `[PlatformIO folder]/packages/toolchain-atmelavr/avr/lib/ldscripts/avrxmega3.xn`
-Replace the line 19 from
+
+Replace the line 19 from:
 ```
 data   (rw!x) : ORIGIN = 0x802000, LENGTH = __DATA_REGION_LENGTH__
 ```
