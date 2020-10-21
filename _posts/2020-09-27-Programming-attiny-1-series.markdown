@@ -53,9 +53,9 @@ To solve it you need to download the libraries and place them in the right folde
 ### Download the libraries
 Finding the required files on the web has been not an easy task. Thankfully the Atmel application [note AN2503](http://ww1.microchip.com/downloads/en/Appnotes/Getting-Started-with-tinyAVR1-series-00002503B.pdf) has been a good starting point [^4].
 
-The files can be downloaded from this [link](http://packs.download.atmel.com/).
+The files can be downloaded from this [link](https://packs.download.microchip.com/.
 
-The pack of our interest is **Atmel ATtiny Series Device Support (1.6.326)**.
+The pack of our interest is the latest **Atmel ATtiny Series Device Support**.
 
 It's a *.atpack*, but it's actually a zipped folder. So you can open it changing it's extension into *.zip*.
 
@@ -107,6 +107,21 @@ Copy the code below in the similar section where all the headers are defined.
 #elif defined (__AVR_ATtiny3217__)
 #  include <avr/iotn3217.h>
 ```
+
+### Modify file avrxmega3.xn
+
+Open the file `[PlatformIO folder]/packages/toolchain-atmelavr/avr/lib/ldscripts/avrxmega3.xn`
+Replace the line 19 from
+```
+data   (rw!x) : ORIGIN = 0x802000, LENGTH = __DATA_REGION_LENGTH__
+```
+to
+```
+data   (rw!x) : ORIGIN = __DATA_REGION_ORIGIN__, LENGTH = __DATA_REGION_LENGTH__
+```
+This helps the linker correctly set the data region[^6].
+
+
 ## Setting up the programming interface
 ### Install *pyupdi*
 As mentioned earlier, I use **pyupdi**, a Python script that allows to program the AVR devices using a standard TTL serial port. You can get it from GitHub at [this page](https://github.com/mraardvark/pyupdi) or install with pip:
@@ -186,7 +201,7 @@ int main()
     }
 }
 ```
-This will b
+This will blink a led connected on pin 4.
 
 Hit *Upload* and, if everything goes well, you should have a led blinking on pin 4.
 
@@ -201,4 +216,5 @@ Hit *Upload* and, if everything goes well, you should have a led blinking on pin
 [^3]: Examples on [Technoblogy](http://www.technoblogy.com/show?2OCH) and [JayCarlson](https://jaycarlson.net/pf/atmel-microchip-tinyavr-1-series/). GitHub [page](https://github.com/SpenceKonde/jtag2updi) of Jtag2UPDI.
 [^4]: Page 14 of the Application Note shows the link to the libraries download page.
 [^5]: From LeoNerd's [Blog](http://leonerds-code.blogspot.com/2019/06/building-for-new-attiny-1-series-chips.html)
+[^6]: This was flagged by a reader. Solution found [here](https://www.avrfreaks.net/comment/2868501)
 
