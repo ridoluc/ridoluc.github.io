@@ -1,11 +1,16 @@
 let points = [
-    new Point(146,180.125),
-    new Point(235,200.125),
-    new Point(215,68.125),
-    new Point(152,110.125),
-    new Point(192,110.125),
-    new Point(160,30.125),
-    new Point(140,86.125)
+	new Point(20,22),
+	new Point(27,73),
+	new Point(76,71),
+	new Point(40,56),
+	new Point(57,28),
+	new Point(38,14),
+	new Point(79,15),
+	new Point(91,42),
+	new Point(62,53),
+	new Point(61,84),
+	new Point(11,48),
+	new Point(15,88)
 ];
 
 let vor, gr, _svg_; 
@@ -14,7 +19,15 @@ let vor, gr, _svg_;
 $(document).ready(function () {
 	_svg_ = document.getElementById("voronoi");
 
-    vor = new Voronoi(points, _svg_.width.baseVal.value, _svg_.height.baseVal.value);    
+	let h = _svg_.height.baseVal.value;
+ 	let w = _svg_.width.baseVal.value;
+
+	points.forEach(element => {
+		element.x *= w/100;
+		element.y *= h/100;
+	});
+	
+    vor = new Voronoi(points, w, h);    
     gr = new SVG_Graphics(_svg_);
 	
 	let t0 = performance.now();

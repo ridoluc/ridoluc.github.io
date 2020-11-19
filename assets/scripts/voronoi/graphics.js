@@ -2,7 +2,7 @@ class SVG_Graphics {
 	constructor(svg_context) {
 		this._svg_ = svg_context;
 
-		this.point_style = "fill:red";
+		this.point_style = "fill:#b70000";
 		this.line_style = "stroke: rgb(205, 207, 239);stroke-width: 1;fill: transparent";
 		this.vertex_style = "stroke: black;stroke-width: 0.2;fill: transparent;";
 	}
