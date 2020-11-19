@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Voronoi diagrams with Fortune's algorithm"
-description: "Drawing Voronoi diagrams with Fortune's algorithm. Explanation of how the Fortune's algorithm works. JavaScript code to create Voronoi diagrams."
-date: 2020-11-20 22:00:00 +0000
+description: "Voronoi diagrams generation with Fortune's algorithm. Explanation of how the Fortune's algorithm works. JavaScript code to create Voronoi diagrams."
+date: 2020-11-19 12:00:00 +0000
 tags: algorithms graphics
 #slug: "--"
 usemathjax: true
