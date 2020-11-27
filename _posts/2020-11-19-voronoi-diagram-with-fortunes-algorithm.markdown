@@ -250,6 +250,10 @@ Drawing the diagram depends on the platform and language used. I wrote the progr
 
 The full JavaScript code and details about the usage can be found on the [github](https://github.com/ridoluc/Voronoi-Diagram) page.
 
+## Other posts you may be interested in
+- [Computing the convex hull of a set of points]({%post_url 2020-11-25-convex-hull-algorithms-for-a-set-of-points%})
+
+
 
 ## Notes
 
