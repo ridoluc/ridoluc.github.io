@@ -21,7 +21,7 @@
 title: bitbanging
 email: lr@bitbanging.space
 description: "A space to share notes and ideas mixing programming, mathematics and electronics." 
-tagline: "Programming, electronics and maths notes"
+tagline: "Programming and electronics notes"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.bitbanging.space" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
