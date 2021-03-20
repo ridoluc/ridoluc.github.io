@@ -252,7 +252,7 @@ The full JavaScript code and details about the usage can be found on the [github
 
 ## Other posts you may be interested in
 - [Computing the convex hull of a set of points]({%post_url 2020-11-25-convex-hull-algorithms-for-a-set-of-points%})
-
+- [Lloyd's Algorithm: Voronoi diagrams relaxation]({%post_url 2021-03-18-lloyds-algorithm%})
 
 
 ## Notes

@@ -223,6 +223,7 @@ where `b` is the point in common for the two segments
 
 ## Other posts you may be interested in
 - [Creating voronoi diagrams with Fortune's algorithm]({%post_url 2020-11-19-voronoi-diagram-with-fortunes-algorithm%})
+- [Lloyd's Algorithm: Voronoi diagrams relaxation]({%post_url 2021-03-18-lloyds-algorithm%})
 
 ## Notes
 [^1]: More details about the [convex hull](https://en.wikipedia.org/wiki/Convex_hull) and [algorithms](https://en.wikipedia.org/wiki/Convex_hull_algorithms) for its construction
