@@ -60,11 +60,21 @@ The pack of our interest is the latest **Atmel ATtiny Series Device Support**.
 It's a *.atpack*, but it's actually a zipped folder. So you can open it changing it's extension into *.zip*.
 
 ### Copy files in the right directories
-From the unzipped folder copy all the files from `include/avr` to `[PlatformIO folder]/packages/toolchain-atmelavr/avr/include/avr/`.
+From the unzipped folder copy all the files from `include/avr` to 
+```
+[PlatformIO folder]/packages/toolchain-atmelavr/avr/include/avr/
+```
 
-Then copy all the files `*.o` and `*.a` from each folder named `gcc/dev/attiny*` (or just the ones you need) to the folders in `[PlatformIO folder]/packages/toolchain-atmelavr/avr/lib/` following the same folder structure.
+Then copy all the files `*.o` and `*.a` from each folder named `gcc/dev/attiny*` (or just the ones you need) to the folders in 
+```
+[PlatformIO folder]/packages/toolchain-atmelavr/avr/lib/
+```
+following the same folder structure.
 
-So for example, for the ATtiny412 there are two files inside `/gcc/dev/attiny412/avrxmega3/short-calls/`. These will be placed inside `[PlatformIO folder]/packages/toolchain-atmelavr/avr/lib/avrxmega3/short-calls/`.
+So for example, for the ATtiny412 there are two files inside `/gcc/dev/attiny412/avrxmega3/short-calls/`. These will be placed inside 
+```
+[PlatformIO folder]/packages/toolchain-atmelavr/avr/lib/avrxmega3/short-calls/
+```
 
 As an alternative in Unix you can use the following commands [^5]:
 ```
@@ -73,7 +83,10 @@ $ sudo cp gcc/dev/attiny?*1[2467]/avrxmega3/*.{o,a} [PlatformIO folder]/packages
 $ sudo cp gcc/dev/attiny?*1[2467]/avrxmega3/short-calls/*.{o,a} [PlatformIO folder]/packages/toolchain-atmelavr/avr/lib/avrxmega3/short-calls/
 ```
 ### Add headers into *io.h*
-Locate the *io.h* file inside you avr toolchain folder. For PlatformIO this is `[PlatformIO folder]/packages/toolchain-atmelavr/avr/include/avr/io.h`.
+Locate the *io.h* file inside you avr toolchain folder. For PlatformIO this is 
+```
+[PlatformIO folder]/packages/toolchain-atmelavr/avr/include/avr/io.h
+```
 Copy the code below in the similar section where all the headers are defined.
 ```
 #elif defined (__AVR_ATtiny212__)
@@ -110,7 +123,10 @@ Copy the code below in the similar section where all the headers are defined.
 
 ### Modify file avrxmega3.xn
 
-Open the file `[PlatformIO folder]/packages/toolchain-atmelavr/avr/lib/ldscripts/avrxmega3.xn`
+Open the file 
+```
+[PlatformIO folder]/packages/toolchain-atmelavr/avr/lib/ldscripts/avrxmega3.xn
+```
 
 Replace the line 19 from:
 ```
