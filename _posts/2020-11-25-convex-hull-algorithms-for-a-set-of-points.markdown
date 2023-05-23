@@ -6,7 +6,7 @@ date: 2020-11-25 12:00:00 +0000
 tags: algorithms graphics
 #slug: "--"
 usemathjax: true
-# featured_img: "/assets/img/RunTiny/RunTiny_game_copy.jpg"
+featured_img: "/assets/img/convex-hull/convex-hull-algorithm.png"
 ---
 
 Implementation of Gift wrapping and Graham scan algorithms in JavaScript for constructing the convex hull of a set of points.
