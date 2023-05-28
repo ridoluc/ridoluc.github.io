@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lorenz Attractors"
-description: "Simulation of Lorenz attractors with fourth order Runge Kutta numerical solution"
+description: "Simulation of Lorenz attractors with fourth-order Runge Kutta numerical solution"
 date: 2023-05-26 12:00:00 +0000
 tags: algorithms graphics
 #slug: "--"

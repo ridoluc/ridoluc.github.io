@@ -11,7 +11,6 @@ var gr;
 
 (function () {
 	let _svg_ = document.getElementById("svg_lorenz");
-	gr = new SVG_Graphics(_svg_);
 
 	document.getElementById("start-stop-btn").onclick = start_stop;
 	document.getElementById("refresh-btn").onclick = restart;
@@ -20,6 +19,8 @@ var gr;
 	lorenz_solver= new Lorenz_solver(initialPoint);
 
 	let cr_points = lorenz_solver.critical_points();
+
+	gr = new SVG_Graphics(_svg_, cr_points);
 
 	gr.draw_points(
 		[

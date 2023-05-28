@@ -1,9 +1,9 @@
 class SVG_Graphics {
-	constructor(svg_context) {
+	constructor(svg_context, cr_points) {
 		this._svg_ = svg_context;
 
 		this.scale = { x: 9, y: 9 };
-		this.translate = { x: 340, y: 30 };
+		this.translate = { x: this._svg_.clientWidth/2, y: cr_points[0].y };
 
 		this.svgPath = document.createElementNS(
 			"http://www.w3.org/2000/svg",
