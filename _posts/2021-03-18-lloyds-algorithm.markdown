@@ -41,7 +41,7 @@ Implementation of Lloyd's Algorithm in JavaScript. Also referred to as Voronoi r
 The Lloyd's Algorithm[^1], often referred to as Voronoi relaxation, is a computational geometry algorithm used for distributing a set of point in the space evenly. The algorithm also partitions the space in uniformly shaped convex cells.  
 This finds applications in several problems that range from smoothing geometry meshes used in finite element methods to artistic patterns like stippling.
 I'm usually fascinated by geometric algorithms and even more when these have beautiful graphical translations.   
-Since I already wrote a JavaScript implementation of [Steven Fortune's Algorithm](link here) for computing Voronoi diagrams, building a Lloyd's Algorithm was an easy task.  
+Since I already wrote a JavaScript implementation of [Steven Fortune's Algorithm]({%post_url 2020-11-19-voronoi-diagram-with-fortunes-algorithm%}) for computing Voronoi diagrams, building a Lloyd's Algorithm was an easy task.  
 I wrote below a few details about this.
 
 ## The Algorithm
