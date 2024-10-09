@@ -6,7 +6,7 @@ date: 2020-11-19 12:00:00 +0000
 tags: algorithms graphics
 #slug: "--"
 usemathjax: true
-# featured_img: "/assets/img/RunTiny/RunTiny_game_copy.jpg"
+featured_img: "/assets/img/Voronoi/Voronoi-Fortune-Algorithm.png"
 ---
 
 Voronoi diagrams are fascinating geometric object with numerous applications. However, the process for their generation may be slow and complex. Fortunately, there are elegant solutions to efficiently construct these diagrams. Here is my JavaScript implementation of the Fortune's Algorithm.

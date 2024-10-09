@@ -13,31 +13,30 @@ layout: default
 			<li>
 				{%- assign date_format = site.minima.date_format | default: "%b
 				%-d, %Y" -%}
-				<span class="post-meta c-lg uppercs"
-					>{{ post.date | date: date_format }}</span
-				>
-				<h2>
-					{{ post.title | escape }}
-				</h2>
+				<span class="post-meta c-lg uppercs">{{ post.date | date: date_format }}</span>
+
 				<div class="row">
-          {% assign cols_w = "twelve" %}
-          {%- if post.featured_img -%}
-          {%- assign cols_w = "nine" -%}
-          {%- endif -%}
+					{% assign cols_w = "twelve" %}
+					{%- if post.featured_img -%}
+					{%- assign cols_w = "seven" -%}
+					{%- endif -%}
 					<div class="{{cols_w}} columns">
+						<h2>
+							{{ post.title | escape }}
+						</h2>
 						<!-- <img src="/assets/img/new_proj_pio.png" style="float: right; max-height: 100px; margin-left: 30px;"> -->
 						{%- if site.show_excerpts -%} {{ post.excerpt }}
 						<!-- <div class="c-lg">more ...</div> -->
 						{%- endif -%}
-          </div>
-                    <!-- <div class="c-lg">more ...</div> -->
-          {%- if post.featured_img -%}
-					<div class="three columns post-img-container">
+					</div>
+					<!-- <div class="c-lg">more ...</div> -->
+					{%- if post.featured_img -%}
+					<div class="five columns post-img-container">
 						<div class="post-img" style="background-image: url({{post.featured_img | prepend: site.base_url}});">
 							<!-- <img src={{post.featured_img | prepend: site.base_url}} /> -->
 						</div>
-          </div>
-          {%- endif -%}
+					</div>
+					{%- endif -%}
 				</div>
 			</li>
 		</a>
